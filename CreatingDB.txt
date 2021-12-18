@@ -58,7 +58,12 @@ INSERT INTO Hero ('Hero name') VALUES
 ('Shadow fiend'),
 ('Teches');
 
+INSERT INTO Products ('Name', 'Rarity ID', 'Hero ID', 'Count', 'Price') VALUES
+('Feast of Abscession', 7, 1, 3, 1799),
+('Demon Eater', 7, 2, 2, 1699),
+('Swine of the Sunken Galley', 7, 3, 1, 1599);
 
-
+INSERT INTO Deals ('Date', 'User ID', 'Product ID') VALUES
+('16/4/2021', 1, 2);
 
 
