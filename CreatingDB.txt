@@ -1,0 +1,55 @@
+CREATE TABLE "Rarity" (
+	"ID"	INTEGER NOT NULL UNIQUE,
+	"Rarity name"	TEXT NOT NULL UNIQUE,
+	"Rarity color"	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY("ID")
+);
+
+CREATE TABLE "Hero" (
+	"ID"	INTEGER NOT NULL UNIQUE,
+	"Hero name"	TEXT NOT NULL UNIQUE,
+	"Hero ico"	TEXT UNIQUE,
+	PRIMARY KEY("ID")
+);
+
+CREATE TABLE "Products" (
+	"ID"	INTEGER NOT NULL UNIQUE,
+	"Name"	TEXT NOT NULL,
+	"Rarity ID"	INTEGER NOT NULL,
+	"Hero ID"	INTEGER NOT NULL,
+	"Count"	INTEGER,
+	"Price"	INTEGER,
+	PRIMARY KEY("ID" AUTOINCREMENT)
+	FOREIGN KEY("Rarity ID") REFERENCES "Rarity"("ID"),
+	FOREIGN KEY("Hero ID") REFERENCES "Hero"("ID")
+);
+
+CREATE TABLE "Users" (
+	"ID"	INTEGER NOT NULL UNIQUE,
+	"Name"	TEXT NOT NULL,
+	"Mail"	TEXT NOT NULL UNIQUE,
+	"Password"	TEXT NOT NULL,
+	"Registration date" DATETIME NOT NULL,
+	PRIMARY KEY("ID" AUTOINCREMENT)
+);
+
+CREATE TABLE "Deals" (
+	"ID"	INTEGER NOT NULL,
+	"Date"	DATETIME NOT NULL,
+	"User ID"	INTEGER NOT NULL,
+	"Product ID"	INTEGER NOT NULL,
+	PRIMARY KEY("ID" AUTOINCREMENT),
+	FOREIGN KEY("Product ID") REFERENCES "Products"("ID"),
+	FOREIGN KEY("User ID") REFERENCES "Users"("ID")
+);
+
+INSERT INTO Rarity ('Rarity name','Rarity color') VALUES
+('Common','#b0c3d9'),
+('Uncommon','#5e98d9'),
+('Rare','#4b69ff'),
+('Mythical','#8847ff'),
+('Legendary','#d32ce6'),
+('Immortal','#b28a33'),
+('Arcana','#ade55c'),
+('Ancient','#eb4b4b');
+
