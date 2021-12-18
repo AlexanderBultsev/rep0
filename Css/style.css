@@ -73,17 +73,29 @@ a {
 
 .catalog_name {
     text-align: center;
-    font-size: 35px;
+    font-size: 20px;
     text-transform: uppercase;
     margin: 10px;
 }
 
-.catalog a {
-    text-shadow: 1px 1px #8989a5b6;
+.catalog_des {
+    font-size: 18px;
+    margin: 15px 10px;
 }
 
-.catalog a:hover {
-    text-shadow: 1px 1px 1px #fff;
+.buy_a {
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 15px 10px;
+    padding: 10px 10px;
+    background: #3e4edaab;
+    border-bottom: 2px solid #2a3ab6;
+    box-shadow: 4px 4px 4px #0000005b;
+}
+
+.buy_a:hover {
+    box-shadow: 1px 1px 2px #0000005b;
+    text-shadow: 1px 1px 0px #0000005b;
 }
 
 .product_img {

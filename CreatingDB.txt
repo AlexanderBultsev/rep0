@@ -53,3 +53,12 @@ INSERT INTO Rarity ('Rarity name','Rarity color') VALUES
 ('Arcana','#ade55c'),
 ('Ancient','#eb4b4b');
 
+INSERT INTO Hero ('Hero name') VALUES
+('Pudge'),
+('Shadow fiend'),
+('Teches');
+
+
+
+
+
