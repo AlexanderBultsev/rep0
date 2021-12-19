@@ -11,6 +11,8 @@ header, footer {
     border-radius: 9px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-bottom: 4px solid #2e398a;
+    box-shadow: 4px 4px 4px #0000005b;
 }
 
 footer {
@@ -65,6 +67,8 @@ a {
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    border-bottom: 4px solid #2e398acc;
+    box-shadow: 4px 4px 4px #0000005b;
 }
 
 .catalog img {
