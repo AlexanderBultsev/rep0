@@ -2,7 +2,7 @@ import sqlite3
 from DBRequests import *
 
 
-conn = sqlite3.connect('Databases/DB1.db')
+conn = sqlite3.connect('db/DB1.db')
 cursor = conn.cursor()
 
 

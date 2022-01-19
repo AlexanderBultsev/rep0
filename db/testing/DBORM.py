@@ -5,11 +5,11 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import backref
 
-# Перед запуском убедитесь, что файл (TestCopyDB1_1.db) отсутствует в директории (Databases)
+# Перед запуском убедитесь, что файл (TestCopyDB1_1.db) отсутствует в директории (testing)
 
 app = Flask(__name__) # объект приложения Flask
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Databases/TestCopyDB1_1.db' # привязываем базу данных
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TestCopyDB1_1.db' # привязываем базу данных
 db = SQLAlchemy(app) # создаем объект SQLAlchemy
 
 

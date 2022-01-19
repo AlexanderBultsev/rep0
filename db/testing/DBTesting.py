@@ -3,7 +3,7 @@ import unittest
 
 class TestDB(unittest.TestCase):
     def setUp(self):
-        self.conn = sqlite3.connect('Databases/TestCopyDB1.db')
+        self.conn = sqlite3.connect('db/testing/TestCopyDB1.db')
         self.cursor = self.conn.cursor()
 
     def tearDown(self):
