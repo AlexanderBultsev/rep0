@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='/image/ico.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.css') }}">
     <meta charset="UTF-8">
-    <title>О нас</title>
+    <title>{{item.name}}</title>
 </head>
 
 <body>
@@ -28,25 +28,17 @@
 
     <div class="container">
 
-        <h1>О нас</h1>
+        <h1>{{item.name}}</h1>
 
-        <h1>О нашем магазине</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Maxime reprehenderit nostrum fugiat, sunt quod aut nesciunt repellat quo culpa, 
-            voluptatem cumque quos tempore placeat pariatur, maiores eum optio neque expedita.</p>
-        
-        <form action="#">
-            <legend><h1>Оставить отзыв</h1></legend>
-            Представьтесь <input type="text" name="name" placeholder="Иванов Иван Иванович"> <br>
-            Почта для обратной связи <input type="email" name="email" placeholder="ivanov@mail.com"><br>
-            Оставьте ваш отзыв, пожелания или предложения <br>
-            <textarea name="review" id="" cols="68" rows="6"></textarea><br>
-            <input type="submit" value="Отправить">
-        </form>
+        <div class="product_img">
+        <img src="{{ url_for('static', filename='/image/' + item.image) }}" width="600px">
+        </div>
 
-        <h1>Мы на карте</h1>
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A779905c4df65aa3cc82b2598c1f85189c1f6186bd2a1afff8f8734f9d4d7097a&amp;source=constructor"
-        width="1131" height="615" frameborder="0"></iframe>
+        <div class="product_des">
+        <h2>{{item.descr}}</h2>
+        <h3>Цена {{item.price}} ₽</h3>
+        <a class="buy_a" href="">Купить</a>
+        </div>
 
     </div>
 

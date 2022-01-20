@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/image/ico.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.css') }}">
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/x-icon" href="Images/Ico.ico">
-    <link rel="stylesheet" type="text/css" href="Css/style.css">
-    <title>Каталог скинов</title>
+    <title>Каталог</title>
 </head>
+
 <body>
 
 <div class="wrapper">
 
     <header>
         <ul class="menu">
-            <li><img class="logo" src="Images/Logo.png" alt=""></li>
-            <li><a href="main.html">Главная</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="about.html">О нас</a></li>
+            <li><img class="logo" src="{{ url_for('static', filename='/image/Logo.png') }}"></li>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/catalog">Каталог</a></li>
+            <li><a href="/about">О нас</a></li>
         </ul>
     </header>
 
@@ -24,35 +31,36 @@
         <h1>Каталог скинов</h1>
         <h2><strong>Выберайте скины на свой вкус</strong></h2>
 
-        <div class="catalog">
-            <img src="Images/Pudge01.jpg">
-            <p class="catalog_name">Feast of Abscession</p>
-            <p class="catalog_des">Аркана на Pudge</p>
-            <p class="catalog_des">Цена 1799 ₽</p>
-            <a class="buy_a" href="FeastofAbscession.html">Подробнее</a>
-        </div>
+        <div class='catalog'>
+            {% for item in items %}
+                <div class="catalog_item">
+                    <img class="catalog_item_img" src="{{ url_for('static', filename='/image/' + item.image) }}">
+                    <p class="catalog_item_name">{{item.name}}</p>
+                    <p class="catalog_item_price">{{item.price}} ₽</p>
+                    <a class="buy_a" href="/product/{{item.name}}">Подробнее</a>
+                </div>
+            {% endfor %}
 
-        <div class="catalog">
-            <img src="Images/ShadowFiend01.jpg">
-            <p class="catalog_name">Demon Eater</h1>
-            <p class="catalog_des">Аркана на Shadow Fiend</p>
-            <p class="catalog_des">Цена 1699 ₽</p>
+        <!-- <div class="catalog_item">
+            <img src="static\image\DemonEater01.jpg">
+            <p class="catalog_item_name">Demon Eater</h1>
+            <p class="catalog_item_price">1699 ₽</p>
             <a class="buy_a" href="">Подробнее</a>
         </div>
 
-        <div class="catalog">
-            <img src="Images/Teches01.jpg">
-            <p class="catalog_name">Swine of the Sunken Galley</p>
-            <p class="catalog_des">Аркана на Teches</p>
-            <p class="catalog_des">Цена 1599 ₽</p>
+        <div class="catalog_item">
+            <img src="static\image\SwineoftheSunkenGalley01.jpg">
+            <p class="catalog_item_name">Swine of the Sunken Galley</p>
+            <p class="catalog_item_price">1599 ₽</p>
             <a class="buy_a" href="">Подробнее</a>
+        </div> -->
         </div>
 
     </div>
 
     <footer>
         <ul class="menu">
-            <li><img class="logo" src="Images/Logo.png" alt=""></li>
+            <li><img class="logo" src="{{ url_for('static', filename='/image/Logo.png') }}"></li>
             <li>Поддержка pnimos@mail.com</li>
     </footer>
 
