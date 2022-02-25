@@ -1,4 +1,6 @@
 html, body {
+    min-width: 960px;
+    min-height: 540px;
     height: 100%;
     margin-top: 0;
     background-color: #d3e2ff;
@@ -8,9 +10,8 @@ html, body {
 header, footer {
     background-color: #3a48afee;
     height: 72px;
+    margin: 10px;
     border-radius: 9px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     border-bottom: 4px solid #2e398a;
     box-shadow: 4px 4px 4px #0000005b;
 }
@@ -58,9 +59,14 @@ a {
     text-decoration: none;
 }
 
-.catalog {
+a:hover {
+    color: unset;
+}
+
+.catalog_item {
     display: inline-block;
     background-color: #3a48afcc;
+    width: 340px;
     height: 400px;
     padding: 10px;
     position: relative;
@@ -71,27 +77,30 @@ a {
     box-shadow: 4px 4px 4px #0000005b;
 }
 
-.catalog img {
-    width: 350px;
+.catalog_item_img {
+    width: 320px;
 }
 
-.catalog_name {
+.catalog_item_name {
+    height: 64px;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     margin: 10px;
 }
 
-.catalog_des {
-    font-size: 18px;
-    margin: 15px 10px;
+.catalog_item_price {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
 }
 
 .buy_a {
+    width: 120px;
     font-size: 18px;
     border-radius: 5px;
-    margin: 15px 10px;
-    padding: 10px 10px;
+    margin: 10px;
+    padding: 10px;
     background: #3e4edaab;
     border-bottom: 2px solid #2a3ab6;
     box-shadow: 4px 4px 4px #0000005b;
